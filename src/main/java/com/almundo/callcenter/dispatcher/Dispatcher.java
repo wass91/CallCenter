@@ -57,9 +57,9 @@ public class Dispatcher implements Runnable{
 	/**
 	 * Se inicia las llamadas de prueba
 	 */
-	private void initCalls(){
+	public void initCalls(){
 		this.queueCalls = new LinkedList<Call>();
-		for(int i = 0; i < 30; i++){
+		for(int i = 0; i < 10; i++){
 			this.queueCalls.add(new Call(i, "Customer "+i));
 		}
 	}
@@ -110,4 +110,21 @@ public class Dispatcher implements Runnable{
 		}
 	}
 
+
+	public List<CallHandler> getOperators() {
+		return operators;
+	}
+
+	public List<CallHandler> getSupervisors() {
+		return supervisors;
+	}
+
+	public List<CallHandler> getDirectors() {
+		return directors;
+	}
+
+	public Queue<Call> getQueueCalls() {
+		return queueCalls;
+	}
+	
 }
